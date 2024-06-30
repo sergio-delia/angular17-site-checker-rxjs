@@ -1,27 +1,27 @@
-# SiteChecker
+# Servizio di Monitoraggio dello Stato dei Siti Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.1.
+## Descrizione
 
-## Development server
+Questo servizio Angular monitora costantemente una lista di siti web per verificarne lo stato online. Invia richieste HTTP a intervalli regolari e registra eventuali disconnessioni con dettagli sugli errori. Si integra anche con Firestore per gestire dinamicamente la lista dei siti. In caso di rilevamento di un blocco di un sito, il sistema invierà in automatico una mail alla casella
+del proprietario del sito.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funzionalità
 
-## Code scaffolding
+- **Controllo periodico dello stato dei siti web**: Invia richieste HTTP a intervalli definiti per verificare se i siti sono online.
+- **Registrazione degli errori**: Registra gli errori con dettagli nel caso in cui un sito non sia raggiungibile.
+- **Integrazione con Firestore**: Permette di gestire dinamicamente la lista dei siti da monitorare.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installazione
 
-## Build
+Imposta le tue credenziali di Firebase nel file di configurazione environment.ts.
+Utilizzo
+Avvia l'applicazione Angular
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Monitoraggio automatico
 
-## Running unit tests
+Il servizio inizierà automaticamente a monitorare lo stato dei siti web configurati in Firestore.
+I log degli errori saranno visibili nella console del browser.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Configurazione
+URL dei siti da monitorare: La lista dei siti viene gestita in Firestore. Aggiungi, modifica o rimuovi i siti direttamente da Firestore.
+Intervallo di controllo: L'intervallo di controllo è configurabile tramite il codice sorgente (default: 5 minuti).
