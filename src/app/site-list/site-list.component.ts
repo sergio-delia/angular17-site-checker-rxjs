@@ -26,4 +26,8 @@ export class SiteListComponent implements OnInit{
   }
 
   deleteSite(site: any){}
+
+  addSite(){
+    this.router.navigate(['add-site']);
+  }
 }

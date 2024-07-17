@@ -85,6 +85,16 @@ button.delete:hover {
   background-color: #e53935;
 }
 
+button.add-site {
+  margin:20px auto 0 auto;
+  display: block;
+  background-color: #007bff;
+}
+
+button.add-site:hover {
+  background-color: #0069d9;
+}
+
 .status {
   display: flex;
   align-items: center;

@@ -3,6 +3,8 @@ import { Site } from '../status-check.service';
 import { FirestoreService } from '../firestore.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-site',
@@ -17,15 +19,20 @@ export class AddSiteComponent {
     email: ''
   }
 
-  constructor( private firestore: FirestoreService ){}
+  constructor( private firestore: FirestoreService, private router: Router, private toast: ToastrService ){}
 
   addSite(){
     this.firestore.addSite(this.newSite).then(() => {
       console.log('Site added');
-
+      this.toast.success('Sito aggiunto con successo');
+      this.router.navigate(['/site-list']);
     }).catch(error => {
-      console.log('Errore', error);
-
+      this.toast.error('Errore durante l\'inserimento');
+      console.error('Error adding site:', error);
     })
+  }
+
+  cancel() {
+    this.router.navigate(['/site-list']);
   }
 }
