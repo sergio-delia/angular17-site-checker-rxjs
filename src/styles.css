@@ -1,1 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: linear-gradient(135deg, #698dd7 0%, #928dab 100%), url(https://www.transparenttextures.com/patterns/dark-mosaic.png);
+  background-size: cover;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: rgb(17 21 46 / 90%);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  box-sizing: border-box;
+}

@@ -1,0 +1,19 @@
+<h2>Lista dei siti monitorati</h2>
+<div class="site-list">
+  <div class="site-item" *ngFor="let site of sites$ | async">
+    <div class="site-info">
+      <p class="site-name">{{site.name}}</p>
+      <p class="site-email">{{site.email}}</p>
+    </div>
+    <div class="actions">
+      <button class="edit" (click)="editSite(site)">Modifica</button>
+      <button class="delete" (click)="deleteSite(site)">Elimina</button>
+    </div>
+    <div class="status">
+      <span class="icon" [ngClass]="site.stato ? 'check' : 'x'">
+        <i *ngIf="site.stato" class="fa-solid fa-circle-check"></i>
+        <i *ngIf="!site.stato" class="fa-solid fa-circle-xmark"></i>
+      </span>
+    </div>
+  </div>
+</div>

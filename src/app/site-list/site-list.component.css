@@ -1,0 +1,115 @@
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.site-list {
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+.site-item {
+  background-color: #303444;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  gap: 20px;
+}
+
+.site-item:hover {
+  transform: scale(1.02);
+}
+
+.site-info {
+  flex: 1;
+}
+
+.site-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  color: #ffffff;
+}
+
+.site-email {
+  font-size: 14px;
+  color: #cccccc;
+  margin-top: 5px;
+}
+
+.actions {
+  display: flex;
+
+  .edit {
+    margin-left: 30px;
+  }
+
+}
+
+.actions > * {
+  margin-left: 10px; /* Distanza tra i pulsanti */
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+}
+
+button.edit:hover {
+  background-color: #45a049;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
+button.delete:hover {
+  background-color: #e53935;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.check {
+  color: #4CAF50;
+}
+
+.x {
+  color: #f44336;
+}
+
+@media (max-width: 480px) {
+  .site-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+}
