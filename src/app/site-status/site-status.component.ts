@@ -14,13 +14,13 @@ export class SiteStatusComponent implements OnInit, OnDestroy {
 
   private destroy$ = new Subject<boolean>();
   private statusSubscription: Subscription;
-
+  time_scan:number = 10000
   constructor(private statusCheckService: StatusCheckService, private firestoreService: FirestoreService) { }
 
   ngOnInit(): void {
     console.log('Console log from component: Initializing site status component'); // Esempio di console.log nel componente
 
-    this.statusSubscription = this.statusCheckService.checkStatusPeriodically().subscribe();
+    this.statusSubscription = this.statusCheckService.checkStatusPeriodically(this.time_scan).subscribe();
     //this.statusSubscription = this.statusCheckService.checkStatusOnce().subscribe();
 
     // this.statusCheckService.checkStatusPeriodically().subscribe(response => {

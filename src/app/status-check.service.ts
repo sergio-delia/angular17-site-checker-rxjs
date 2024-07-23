@@ -23,7 +23,7 @@ export class StatusCheckService {
 
   //private root: string = "https://cors-anywhere.herokuapp.com/";
   private url = 'https://cors-anywhere.herokuapp.com/sergiodelia.it'; // Cambia con l'URL del sito che vuoi controllare
-  private time_scan = 10000;
+  //private time_scan = 10000;
   private destroy$ = new Subject<boolean>()
 
   private sites$: Site[] = []
@@ -52,9 +52,9 @@ export class StatusCheckService {
 
 
 
-  checkStatusPeriodically(): Observable<any>{
+  checkStatusPeriodically(time_scan:number): Observable<any>{
     console.log('Entrato nella funzione');
-      return interval(this.time_scan).pipe(
+      return interval(time_scan).pipe(
         takeUntil(this.destroy$),
         mergeMap(() => this.checkTestSite())
       )

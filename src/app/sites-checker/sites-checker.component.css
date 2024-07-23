@@ -1,0 +1,40 @@
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 270px; /* Larghezza fissa per il contenitore */
+  margin: 20px auto; /* Centrato orizzontalmente con margine */
+}
+
+.timer-text {
+  font-size: 1.25rem; /* Dimensione del testo */
+  margin-bottom: 20px; /* Spazio sotto il testo */
+  text-align: center;
+}
+
+.timer-text span {
+  display: block;
+  font-weight: bold; /* Testo in grassetto per il valore del timer */
+  color: #da6900; /* Colore accattivante per il valore del timer */
+}
+
+.sync-button {
+  background-color: #da6900; /* Colore di sfondo blu */
+  color: #fff; /* Colore del testo bianco */
+  border: none; /* Rimuovi il bordo predefinito */
+  border-radius: 5px; /* Angoli arrotondati del pulsante */
+  padding: 10px 20px; /* Spazio interno del pulsante */
+  font-size: 1rem; /* Dimensione del testo del pulsante */
+  cursor: pointer; /* Mostra il cursore a forma di mano */
+  transition: background-color 0.3s, transform 0.2s; /* Transizioni per effetti */
+}
+
+.sync-button:hover {
+  background-color: #ce6401; /* Colore di sfondo al passaggio del mouse */
+}
+
+.sync-button:active {
+  transform: scale(0.98); /* Effetto di pressione */
+}

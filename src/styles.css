@@ -24,3 +24,16 @@ body {
   max-width: 500px;
   box-sizing: border-box;
 }
+
+.full-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media(width<768px){
+  .full-container{
+    flex-direction: column;
+  }
+}
