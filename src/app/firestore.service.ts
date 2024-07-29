@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Firestore, collection, collectionData, doc, docData, getDoc, updateDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Site } from './status-check.service';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, deleteDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +31,11 @@ export class FirestoreService {
     return updateDoc(doc(sitesCollection, site.id), {
       stato: !site.stato
     })
+  }
+
+  deleteSite(id:string){
+    const siteDocRef = doc(this.db, `sites/${id}`);
+    return deleteDoc(siteDocRef);
   }
 
   async addSite(site: Omit<Site, 'id' | 'stato'>) {

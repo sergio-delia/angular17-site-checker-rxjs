@@ -7,7 +7,7 @@
     </div>
     <div class="actions">
       <button class="edit" (click)="editSite(site)">Modifica</button>
-      <button class="delete" (click)="deleteSite(site)">Elimina</button>
+      <button class="delete" (click)="confirmDelete(site)">Elimina</button>
     </div>
     <div class="status">
       <span class="icon" [ngClass]="site.stato ? 'check' : 'x'">
