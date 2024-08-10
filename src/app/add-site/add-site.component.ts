@@ -25,7 +25,7 @@ export class AddSiteComponent {
     this.firestore.addSite(this.newSite).then(() => {
       console.log('Site added');
       this.toast.success('Sito aggiunto con successo');
-      this.router.navigate(['/site-list']);
+      this.router.navigate(['/dashboard']);
     }).catch(error => {
       this.toast.error('Errore durante l\'inserimento');
       console.error('Error adding site:', error);
@@ -33,6 +33,6 @@ export class AddSiteComponent {
   }
 
   cancel() {
-    this.router.navigate(['/site-list']);
+    this.router.navigate(['/dashboard']);
   }
 }

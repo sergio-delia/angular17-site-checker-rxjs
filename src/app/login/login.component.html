@@ -1,0 +1,29 @@
+<div class="user-info" *ngIf="get_current_user(); else notLoggedIn">
+  <p class="user-email">{{user?.email}}</p>
+  <button (click)="logout()" class="logout-button">Logout</button>
+</div>
+
+<!-- Se l'utente non è loggato, mostra il bottone Login -->
+<ng-template #notLoggedIn>
+  <div class="container">
+
+    <h2>Login</h2>
+    <form (ngSubmit)="login()" class="form">
+      <div class="form-group">
+        <label for="mail">E-mail</label>
+        <input type="email" [(ngModel)]="loginForm.email" name="email" id="mail" placeholder="E-mail" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="loginForm.password" name="password" id="password" placeholder="Enter password" required>
+      </div>
+      <!-- Mostra il messaggio di errore se presente -->
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <div class="buttons">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

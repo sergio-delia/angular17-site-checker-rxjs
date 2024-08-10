@@ -2,11 +2,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subject, Subscription, takeUntil } from 'rxjs';
 import { TimerService } from '../timer.service';
 import { StatusCheckService } from '../status-check.service';
+import { LoginService } from '../login.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sites-checker',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './sites-checker.component.html',
   styleUrl: './sites-checker.component.css'
 })
@@ -19,7 +21,11 @@ export class SitesCheckerComponent implements OnInit, OnDestroy {
   private statusSubscription: Subscription;
   private destroy$ = new Subject<void>();
 
-  constructor(private timerService: TimerService, private statusCheckService: StatusCheckService) { }
+  constructor(private timerService: TimerService, private statusCheckService: StatusCheckService, private loginService:LoginService) { }
+
+  get_current_user(){
+    return this.loginService.currentUser
+  }
 
   ngOnInit() {
     this.timerSubscription = this.timerService.timer$.pipe(

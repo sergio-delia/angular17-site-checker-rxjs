@@ -46,7 +46,7 @@ export class EditSiteComponent implements OnInit, OnDestroy{
         .then(() => {
           console.log('Site updated successfully');
           this.toast.success('Aggiornamento avvenuto con successo');
-          this.router.navigate(['/site-list']);
+          this.router.navigate(['/dashboard']);
         })
         .catch((error: any) => {
           this.toast.error('Errore durante l\'aggiornamento');
@@ -58,7 +58,7 @@ export class EditSiteComponent implements OnInit, OnDestroy{
   }
 
   cancel() {
-    this.router.navigate(['/site-list']);
+    this.router.navigate(['/dashboard']);
   }
 
   ngOnDestroy(): void {

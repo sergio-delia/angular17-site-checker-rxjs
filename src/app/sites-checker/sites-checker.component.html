@@ -1,4 +1,8 @@
 <div class="timer-container">
   <h3 class="timer-text">Prossimo aggiornamento tra: <span>{{ timerValue }}s</span></h3>
-  <button class="sync-button" (click)="executeNow()">Aggiorna ora</button>
+  <button class="sync-button" (click)="executeNow()" *ngIf="get_current_user() else notLoggedIn;">Aggiorna ora</button>
+
+  <ng-template #notLoggedIn>
+    <span>Effettua il login per abilitare la funzione "Force Sync"</span>
+  </ng-template>
 </div>
