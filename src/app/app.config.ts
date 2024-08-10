@@ -8,7 +8,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { firebaseConfig } from '../../environment';
+import { environment } from '../environments/environment';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,7 +18,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimations(), // required animations providers
     provideToastr(), // Toastr providers
     provideFirebaseApp(() =>
-      initializeApp(firebaseConfig)
+      initializeApp(environment.firebaseConfig)
     ),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
