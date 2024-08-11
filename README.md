@@ -1,3 +1,5 @@
+URL: https://master--site-pinger.netlify.app/dashboard
+
 # Servizio di Monitoraggio dello Stato dei Siti Web
 
 ## Descrizione
