@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import emailjs from '@emailjs/browser';
-import { environment } from '../environments/environment';
 
 
 export interface MailInfo {
@@ -16,10 +15,13 @@ export interface MailInfo {
 })
 export class MailServiceService {
 
+ API_KEY = "AIzaSyDeVPREzn_F1KsnLEHMBzAndD4mCy0Tuu0"
+ EMAILJS_KEY = "xl-SgHJTGhBmYD_e1"
+
   constructor() { }
 
   public async send(mailInfo: MailInfo){
-    emailjs.init(environment.EMAILJS_KEY)
+    emailjs.init(this.EMAILJS_KEY)
       let response = await emailjs.send("service_cygxo1r","template_gf6h7w9",{
         mail_cliente: mailInfo.mail_cliente,
         site_name: mailInfo.site_name,
